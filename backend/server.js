@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import ProductRoutes from './routes/ProductRoutes.js';
 import { sql } from './config/db.js';
+import { aj } from './lib/arcjet.js';
 
 dotenv.config();
 
@@ -19,7 +20,37 @@ app.use(cors()); //CORS (Cross-Origin Resource Sharing) é um mecanismo que perm
 app.use(helmet()); //Helmet é uma biblioteca para Express.js que agrega 12 middlewares simples, responsáveis por setar alguns headers nas respostas HTTP.
 app.use(morgan('dev')); //Morgan é um middleware de logging para aplicações Node.js. Ele registra detalhes sobre as requisições HTTP recebidas pelo servidor, como método, URL, status de resposta e tempo de resposta.
 
-app.use('/api/products', ProductRoutes);
+// Aplicando arcjet rate-limit em todas as rotas
+
+app.use(async (req, res, next) => {
+    try {
+        const decision = await aj.protect(req, {
+            requested:1
+        })
+
+        if(decision.isDenied()){
+            if(decision.reason.isRateLimit()){
+                return res.status(429).json({message:"Too many requests - Rate limit exceeded"});
+            } else if(decision.reason.isBot()){
+                return res.status(403).json({message:"Access denied - Bot detected"});
+            } else {
+                return res.status(403).json({message:"Access denied"});
+            }
+            return
+        }
+
+        // verificar se há bots falsificados
+        if(decision.results.some((result) => result.reason.isBot() && result.reason.isSpoofed())){
+            return res.status(403).json({message:"Access denied - Spoofed bot detected"});
+            return;
+        }
+
+        next();
+    } catch (error) {
+        console.log('Arcjet error:', error);
+        next(error);
+    }
+});
 
 async function initDB(){
     try {
