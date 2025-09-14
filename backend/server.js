@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import ProductRoutes from './routes/ProductRoutes.js';
 
 dotenv.config();
 
@@ -17,10 +18,7 @@ app.use(cors()); //CORS (Cross-Origin Resource Sharing) é um mecanismo que perm
 app.use(helmet()); //Helmet é uma biblioteca para Express.js que agrega 12 middlewares simples, responsáveis por setar alguns headers nas respostas HTTP.
 app.use(morgan('dev')); //Morgan é um middleware de logging para aplicações Node.js. Ele registra detalhes sobre as requisições HTTP recebidas pelo servidor, como método, URL, status de resposta e tempo de resposta.
 
-app.get('/test', (req, res) => {
-    console.log(res.getHeaders());
-  res.send('Hello backend! test route');
-});
+app.use('/api/products', ProductRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
