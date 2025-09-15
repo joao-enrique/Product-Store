@@ -20,6 +20,7 @@
     "morgan": "^1.10.1"
   },
   "devDependencies": {
+    "daisyui": "^4.12.24",
     "nodemon": "^3.1.10"
   }
 }

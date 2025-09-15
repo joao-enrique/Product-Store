@@ -14,19 +14,15 @@ const PORT = process.env.PORT || 3000;
 
 console.log(`Server is starting on port ${PORT}`);
 
-
-app.use(express.json()); //Express.json é um middleware embutido no Express.js que analisa requisições com payload JSON e transforma o corpo da requisição em um objeto JavaScript acessível via req.body.
-app.use(cors()); //CORS (Cross-Origin Resource Sharing) é um mecanismo que permite que recursos restritos em uma página web sejam solicitados a partir de outro domínio fora do domínio do qual o recurso foi servido.
-app.use(helmet()); //Helmet é uma biblioteca para Express.js que agrega 12 middlewares simples, responsáveis por setar alguns headers nas respostas HTTP.
-app.use(morgan('dev')); //Morgan é um middleware de logging para aplicações Node.js. Ele registra detalhes sobre as requisições HTTP recebidas pelo servidor, como método, URL, status de resposta e tempo de resposta.
+app.use(express.json());
+app.use(cors());
+app.use(helmet());
+app.use(morgan('dev'));
 
 // Aplicando arcjet rate-limit em todas as rotas
-
 app.use(async (req, res, next) => {
     try {
-        const decision = await aj.protect(req, {
-            requested:1
-        })
+        const decision = await aj.protect(req, { requested:1 });
 
         if(decision.isDenied()){
             if(decision.reason.isRateLimit()){
@@ -36,13 +32,10 @@ app.use(async (req, res, next) => {
             } else {
                 return res.status(403).json({message:"Access denied"});
             }
-            return
         }
 
-        // verificar se há bots falsificados
         if(decision.results.some((result) => result.reason.isBot() && result.reason.isSpoofed())){
             return res.status(403).json({message:"Access denied - Spoofed bot detected"});
-            return;
         }
 
         next();
@@ -51,6 +44,9 @@ app.use(async (req, res, next) => {
         next(error);
     }
 });
+
+// 📌 aqui você registra as rotas
+app.use("/api/products", ProductRoutes);
 
 async function initDB(){
     try {
@@ -75,4 +71,4 @@ initDB().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
-})
+});
