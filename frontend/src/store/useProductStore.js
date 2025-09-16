@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const baseURL = "http://localhost:3000";
+const baseURL = import.meta.env.MODE === "development" ?"http://localhost:3000" : "";
 
 export const useProductStore = create((set,get) => ({
     //products state
@@ -42,15 +42,29 @@ export const useProductStore = create((set,get) => ({
 
     //fetch products action
     fetchProducts: async () => {
-        set({loading:true});
+        set({ loading: true });
+
         try {
             const response = await axios.get(`${baseURL}/api/products`);
-            set({products: response.data.data, error: null});
+
+            // Verifica se a API retornou um array ou objeto com data
+            const productsData = Array.isArray(response.data)
+                ? response.data
+                : response.data?.data || [];
+
+            set({ products: productsData, error: null });
         } catch (error) {
-            if (error.status == 429) set({error: "Too many requests, please try again later.", products: []});
-            else set({error: error.message || "An error occurred while fetching products.", products: []});
-        }finally {
-            set({loading:false});
+            // Diferencia erro de rate limit
+            if (error.response?.status === 429) {
+                set({ error: "Too many requests, please try again later.", products: [] });
+            } else {
+                set({
+                    error: error.message || "An error occurred while fetching products.",
+                    products: [],
+                });
+            }
+        } finally {
+            set({ loading: false });
         }
     },
 

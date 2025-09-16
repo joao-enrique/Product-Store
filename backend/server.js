@@ -1,22 +1,26 @@
 import express from 'express';
-import helmet from 'helmet';
+import helmet, { contentSecurityPolicy } from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import ProductRoutes from './routes/ProductRoutes.js';
 import { sql } from './config/db.js';
 import { aj } from './lib/arcjet.js';
+import path from "path"
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const __dirname = path.resolve();
 
 console.log(`Server is starting on port ${PORT}`);
 
 app.use(express.json());
 app.use(cors());
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false,
+}));
 app.use(morgan('dev'));
 
 // Aplicando arcjet rate-limit em todas as rotas
@@ -45,6 +49,13 @@ app.use(async (req, res, next) => {
     }
 });
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "frontend", "dist")));
+
+    app.get((req, res) => {
+        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    });
+}
 // 📌 aqui você registra as rotas
 app.use("/api/products", ProductRoutes);
 
