@@ -92,7 +92,7 @@ function ProductPage() {
               {/* PRODUCT DESCRIPTION */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-base font-medium">PDescription</span>
+                  <span className="label-text text-base font-medium">Description</span>
                 </label>
                 <input
                   type="text"
