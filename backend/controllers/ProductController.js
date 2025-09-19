@@ -16,7 +16,7 @@ export const getAllProducts = async (req, res) => {
 };
 
 export const createProduct = async (req, res) => {
-    const { name, image, price } = req.body;
+    const { name, image, price, description } = req.body;
 
     if(!name || !image || !price){
         return res.status(400).json({sucess: false, message: 'Please provide name, image and price'});
@@ -24,8 +24,8 @@ export const createProduct = async (req, res) => {
 
     try {
         const newProduct = await sql`
-            INSERT INTO products (name, image, price)
-            VALUES (${name}, ${image}, ${price})
+            INSERT INTO products (name, image, price, description)
+            VALUES (${name}, ${image}, ${price}, ${description})
             RETURNING *
         `;
 
@@ -55,12 +55,12 @@ export const getProducts = async (req, res) => {
 
 export const updateProducts = async (req, res) => {
     const { id } = req.params;
-    const { name, image, price } = req.body;
+    const { name, image, price, description } = req.body;
 
     try {
         const updateProduct = await sql`
             UPDATE products
-            SET name=${name}, image=${image}, price=${price}
+            SET name=${name}, image=${image}, price=${price}, description=${description || null}
             WHERE id=${id}
             RETURNING *
         `

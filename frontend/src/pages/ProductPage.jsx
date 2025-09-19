@@ -89,6 +89,20 @@ function ProductPage() {
                 />
               </div>
 
+              {/* PRODUCT DESCRIPTION */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-base font-medium">PDescription</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="..."
+                  className="input input-bordered w-full"
+                  value={formData.description}
+                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                />
+              </div>
+
               {/* PRODUCT IMAGE URL */}
               <div className="form-control">
                 <label className="label">

@@ -1,4 +1,4 @@
-import { DollarSignIcon, ImageIcon, Package2Icon, PlusCircleIcon } from "lucide-react";
+import { DollarSignIcon, ImageIcon, LampDeskIcon, Package2Icon, PlusCircleIcon } from "lucide-react";
 import { useProductStore } from "../store/useProductStore";
 
 function AddProductModal() {
@@ -57,6 +57,25 @@ function AddProductModal() {
               </div>
             </div>
 
+            {/* PRODUCT Description */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-base font-medium">Description(Optionan)</span>
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-base-content/50">
+                  <LampDeskIcon className="size-5" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="..."
+                  className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
+                  value={formData.description}
+                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                />
+              </div>
+            </div>
+
             {/* PRODUCT IMAGE */}
             <div className="form-control">
               <label className="label">
@@ -75,6 +94,7 @@ function AddProductModal() {
                 />
               </div>
             </div>
+
           </div>
 
           {/* MODAL ACTIONS */}
