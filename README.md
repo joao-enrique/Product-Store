@@ -70,11 +70,11 @@ npm run dev
 O frontend estará disponível em: http://localhost:5173 (ou a porta definida pelo Vite)
 
 # 📂 Estrutura do projeto
-├── backend/          # Código da API (Node.js + Express)
-├── frontend/         # Aplicação cliente (React + Vite)
-├── preview-for-project.png
-├── .env.example      # Exemplo de configuração de variáveis de ambiente
-└── README.md         <- Aqui está você 😁
+├── backend/          # Código da API (Node.js + Express) </br>
+├── frontend/         # Aplicação cliente (React + Vite) </br>
+├── preview-for-project.png </br>
+├── .env.example      # Exemplo de configuração de variáveis de ambiente </br>
+└── README.md         <- Aqui está você 😁 </br>
 
 # ✅ Funcionalidades
 - Criar, listar, atualizar e excluir registros (CRUD completo)
