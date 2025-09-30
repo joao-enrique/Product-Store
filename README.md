@@ -62,7 +62,6 @@ npm install
 npm run start
 npm run dev
 ```
-A API estará disponível em: http://localhost:3000
 
 # 🔹 Frontend
 
@@ -72,7 +71,7 @@ npm install
 npm run dev
 ```
 
-O frontend estará disponível em: http://localhost:3000 (Next.js já usa essa porta por padrão)
+O frontend estará disponível em: http://localhost:5173 (ou a porta definida pelo Vite)
 
 # 📂 Estrutura do projeto
 ├── backend/ # Código da API (Node.js + Express) </br> 
@@ -113,6 +112,7 @@ Feito com 💛 por João Enrique
     </a> 
 
 </div>
+
 
 
 
