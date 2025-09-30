@@ -44,10 +44,13 @@
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ```bash
-DATABASE_URL=...
-
-NEXT_PUBLIC_API_URL=...
 PORT=3000
+PGUSER=...
+PGPASSWORD=...
+PGHOST=...
+PGDATABASE=...
+ARCJET_KEY=...
+ARCJET_ENV=development
 ```
 
 # ▶️ Como rodar o projeto
@@ -56,13 +59,16 @@ Na raiz do projeto, rode:
 
 ```bash
 npm install
-npx prisma migrate dev
+npm run start
+npm run dev
 ```
 A API estará disponível em: http://localhost:3000
 
 # 🔹 Frontend
 
 ```bash
+cd frontend
+npm install
 npm run dev
 ```
 
@@ -108,4 +114,5 @@ Feito com 💛 por João Enrique
     </a> 
 
 </div>
+
 
