@@ -1,4 +1,4 @@
-<h1 align="left">🍔 Clone do McDonald's com PERN + Prisma ✨</h1>
+<h1 align="left">✨ CRUD utilizando o modelo PERN ✨</h1>
 
 <div align="center">
     <a href="https://product-store-ir63.onrender.com/" target="_blank"> 
@@ -108,3 +108,4 @@ Feito com 💛 por João Enrique
     </a> 
 
 </div>
+
