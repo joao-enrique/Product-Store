@@ -75,12 +75,11 @@ npm run dev
 O frontend estará disponível em: http://localhost:3000 (Next.js já usa essa porta por padrão)
 
 # 📂 Estrutura do projeto
-├── prisma/          # Código da API (Node.js + Express + Prisma) </br>
-├── public/         # Aplicação cliente (React + Next.js + TailwindCSS) </br>
-├── src/           # Schemas e migrations do Prisma </br>
-├── preview-for-project.png     # Segue-se o resto de arquivos necessários no Next.js </br>
-├── .env.example      # Exemplo de variáveis de ambiente </br>
-└── README.md         <- Você está aqui 😁
+├── backend/ # Código da API (Node.js + Express) </br> 
+├── frontend/ # Aplicação cliente (React + Vite) </br> 
+├── preview-for-project.png </br> 
+├── .env.example # Exemplo de configuração de variáveis de ambiente </br> 
+└── README.md <- Aqui está você 😁 </br>
 
 # ✅ Funcionalidades
 
@@ -114,5 +113,6 @@ Feito com 💛 por João Enrique
     </a> 
 
 </div>
+
 
 
