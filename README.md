@@ -74,11 +74,11 @@ npm run dev
 O frontend estará disponível em: http://localhost:5173 (ou a porta definida pelo Vite)
 
 # 📂 Estrutura do projeto
-├── backend/ # Código da API (Node.js + Express) </br> 
-├── frontend/ # Aplicação cliente (React + Vite) </br> 
+├── backend/         # Código da API (Node.js + Express) </br> 
+├── frontend/        # Aplicação cliente (React + Vite) </br> 
 ├── preview-for-project.png </br> 
-├── .env.example # Exemplo de configuração de variáveis de ambiente </br> 
-└── README.md <- Aqui está você 😁 </br>
+├── .env.example     # Exemplo de configuração de variáveis de ambiente </br> 
+└── README.md        <- Aqui está você 😁 </br>
 
 # ✅ Funcionalidades
 
@@ -93,7 +93,7 @@ Este projeto é open-source sob a licença MIT. </br>
 Sinta-se à vontade para usar, modificar e contribuir! 🚀
 
 # 🐱‍💻 Autor
-Feito com 💛 por João Enrique
+Feito com 💙 por João Enrique
 <div align="right"> 
     <a href="https://www.linkedin.com/in/joao-enrique-dev/" target="_blank"> 
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin logo" /> 
@@ -112,6 +112,7 @@ Feito com 💛 por João Enrique
     </a> 
 
 </div>
+
 
 
 
