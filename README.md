@@ -13,7 +13,7 @@
 </div>
 
 <p align="left">
-  <b>Um clone do McDonald's construído com foco em escalabilidade, performance e boas práticas, utilizando as tecnologias mais modernas do ecossistema web.</b>
+  <b>Um CRUD moderno e escalável utilizando a stack PERN, estilizado com TailwindCSS e DaisyUI.</b>
 </p>
 
 ---
@@ -112,6 +112,7 @@ Feito com 💙 por João Enrique
     </a> 
 
 </div>
+
 
 
 
