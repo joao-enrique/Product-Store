@@ -14,12 +14,14 @@
 
 ## 🚀 Tecnologias utilizadas
 
-- 🗄 **PostgreSQL** → Banco de dados relacional  
-- ⚙️ **Node.js + Express** → Backend robusto e escalável  
-- ⚡ **Prisma ORM** → Mapeamento de dados moderno e tipado  
-- ⚛️ **React + Next.js** → Frontend rápido, SSR/SSG e rotas otimizadas  
-- 🎨 **TailwindCSS** → Estilização moderna e responsiva  
-- 🔐 **Boas práticas** → Tratamento de erros, segurança e organização de código  
+- 🌟 **PERN Stack** → PostgreSQL + Express + React + Node.js  
+- 🎨 **UI/UX** → TailwindCSS + DaisyUI  
+- 🛡 **Segurança** → Limitação de taxa e detecção de bots com Arcjet  
+- ⚡ **Gerenciamento de estado** → Zustand  
+- 🐞 **Tratamento de erros** → Cliente e servidor  
+- ⏳ **Performance & DX** → Hot reload, boas práticas e muito mais  
+
+---
 
 <div align="right">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="40" alt="postgresql logo"  />
@@ -74,13 +76,11 @@ O frontend estará disponível em: http://localhost:5173 (ou a porta definida pe
 ├── .env.example     # Exemplo de configuração de variáveis de ambiente </br> 
 └── README.md        <- Aqui está você 😁 </br>
 
-# ✅ Funcionalidades
-
-- 🍟 Menu interativo com produtos estilo McDonald's
-- 🛒 Carrinho de compras dinâmico
-- 💳 Simulação de checkout
-- 📦 Integração entre frontend e backend
-- 🔍 Persistência de dados em PostgreSQL via Prisma
+✅ Funcionalidades
+- Criar, listar, atualizar e excluir registros (CRUD completo)
+- Feedback visual para erros e requisições
+- Proteção contra bots e abuso de API
+- Integração entre frontend e backend via REST
 
 # 📜 Licença
 Este projeto é open-source sob a licença MIT. </br>
@@ -106,6 +106,7 @@ Feito com 💙 por João Enrique
     </a> 
 
 </div>
+
 
 
 
