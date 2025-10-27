@@ -2,13 +2,7 @@
 
 <div align="center">
     <a href="https://product-store-ir63.onrender.com/" target="_blank"> 
-        <img src="preview-for-project.png" alt="Button image" /> 
-    </a> 
-</div>
-
-<div align="center">
-    <a href="https://product-store-ir63.onrender.com/" target="_blank"> 
-        <img src="button.png" alt="Button image" /> 
+        <img src="https://i.ibb.co/PvmND5Sk/CONFIRA-O-PROJETO-AQUI-1.png" alt="Button image" /> 
     </a> 
 </div>
 
@@ -112,6 +106,7 @@ Feito com 💙 por João Enrique
     </a> 
 
 </div>
+
 
 
 
