@@ -76,7 +76,7 @@ O frontend estará disponível em: http://localhost:5173 (ou a porta definida pe
 ├── .env.example     # Exemplo de configuração de variáveis de ambiente </br> 
 └── README.md        <- Aqui está você 😁 </br>
 
-✅ Funcionalidades
+# ✅ Funcionalidades
 - Criar, listar, atualizar e excluir registros (CRUD completo)
 - Feedback visual para erros e requisições
 - Proteção contra bots e abuso de API
@@ -106,6 +106,7 @@ Feito com 💙 por João Enrique
     </a> 
 
 </div>
+
 
 
 
