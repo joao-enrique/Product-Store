@@ -1,5 +1,5 @@
 # 💼 Product Store
-> Um CRUD moderno e escalável utilizando a stack PERN, estilizado com TailwindCSS e DaisyUI..
+> Um CRUD moderno e escalável utilizando a stack PERN, estilizado com TailwindCSS e DaisyUI.
 
 ---
 
@@ -165,5 +165,6 @@ Feito com 💜 por [João Enrique](https://linktree-eight-gules.vercel.app/)
 
 ## 📜 Licença
 Este projeto está sob a licença **MIT** — veja o arquivo [LICENCE](./LICENSE) para mais detalhes.
+
 
 ### ⭐ Se este projeto te inspirou, não esqueça de deixar uma **estrela** no repositório!
